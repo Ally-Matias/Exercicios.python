@@ -1,0 +1,17 @@
+import ast
+frase = input("")
+dic = ast.literal_eval(frase)
+
+#dict = {v: k for k, v in dict.items()}
+
+def funcao(dict):
+	Ndict = {}
+	for k, v in dict.items():
+		if dict[k] not in Ndict:
+			Ndict[dict[k]] = [k]
+		else:
+			Ndict[dict[k]].append(k)
+	return Ndict
+
+resp = funcao(dic)
+print(resp)
